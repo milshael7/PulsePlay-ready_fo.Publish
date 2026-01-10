@@ -1,0 +1,173 @@
+/* frontend/src/style/liveplayer.css - Part 1 */
+
+/* Main live player container */
+.live-player-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Video element */
+.live-player-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Live GIF container (floating over video) */
+.live-gif-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+/* Individual GIF */
+.live-gif {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: floatUp 2s ease-in-out infinite;
+}
+
+/* Float animation for GIFs */
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-10px); opacity: 0.8; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Live chat container */
+.live-chat-container {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 300px;
+  max-height: 400px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 8px;
+  padding: 10px;
+  overflow-y: auto;
+  color: #fff;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+/* Chat message */
+.live-chat-message {
+  margin-bottom: 5px;
+}
+/* ---------------- Ads & Video Spots ---------------- */
+.live-ad {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 10px;
+  right: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  animation: fadeInOut 30s infinite;
+  z-index: 20;
+}
+
+.live-ad-left {
+  left: 10px;
+  right: auto;
+}
+
+/* Ad rotation animation */
+@keyframes fadeInOut {
+  0%, 45% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* ---------------- Gifts & Side Effects ---------------- */
+.live-gift {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.live-gift img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+  animation: floatUp 2s ease-out forwards;
+}
+
+/* Floating animation for gifts */
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-150px) scale(1.2); opacity: 0; }
+}
+
+/* ---------------- Free Reactions ---------------- */
+.live-reaction {
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 25;
+}
+
+.live-reaction img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.live-reaction img:hover {
+  transform: scale(1.3);
+}
+
+/* ---------------- Filters & Effects ---------------- */
+.live-filter-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 15;
+}
+
+/* Example filters */
+.filter-soft {
+  filter: brightness(1.1) contrast(1.05) saturate(1.2);
+}
+
+.filter-warm {
+  filter: sepia(0.3) saturate(1.3) contrast(1.05);
+}
+
+/* ---------------- Gift Price Tags ---------------- */
+.gift-price-tag {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  background: gold;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 6px;
+  z-index: 40;
+}

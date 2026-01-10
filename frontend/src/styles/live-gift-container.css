@@ -1,0 +1,227 @@
+/* live-gif-container.css */
+
+/* Container for all live GIFs */
+.live-gif-container {
+  position: absolute;
+  top: 10px;           /* adjust vertical position */
+  right: 10px;         /* adjust horizontal position */
+  width: 120px;        /* total container width */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;       /* make sure it’s above live video */
+  pointer-events: none; /* so live stream interactions aren't blocked */
+}
+
+/* Each individual GIF item */
+.live-gif-container .gif-item {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  animation: popIn 0.5s ease-in-out;
+}
+
+/* Price tag overlay */
+.live-gif-container .gif-item::after {
+  content: attr(data-price);
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background-color: rgba(255,255,255,0.8);
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+/* Pop-in animation for GIFs */
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Optional hover effect */
+.live-gif-container .gif-item:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Rotating GIFs every 30s (requires JS to switch images) */
+.live-gif-container .gif-item.rotate {
+  animation: fadeRotate 30s infinite;
+}
+
+@keyframes fadeRotate {
+  0% { opacity: 1; }
+  45% { opacity: 1; }
+  50% { opacity: 0; }
+  95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+/* live-gif-container.css */
+
+.live-player-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #000;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Live Video Feed */
+.live-video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Video Filters */
+.live-video.beauty {
+  filter: brightness(1.2) contrast(1.1) saturate(1.3);
+}
+.live-video.bright {
+  filter: brightness(1.4);
+}
+.live-video.vivid {
+  filter: saturate(1.5) hue-rotate(10deg);
+}
+
+/* Ads */
+.live-ad {
+  position: absolute;
+  top: 10%;
+  width: 80px;
+  height: 80px;
+  z-index: 5;
+}
+.left-ad {
+  left: 10px;
+}
+.right-ad {
+  right: 10px;
+}
+.live-ad img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #fff;
+}
+
+/* Reactions */
+.live-reactions {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  z-index: 10;
+}
+.reaction {
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: bold;
+  animation: floatUp 4s ease forwards;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+.reaction.heart { background: red; }
+.reaction.flower { background: pink; }
+.reaction.wine { background: purple; }
+.reaction.kiss { background: hotpink; }
+
+/* Float animation for reactions */
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(0.8); opacity: 0.8; }
+  50% { transform: translateY(-40px) scale(1); opacity: 1; }
+  100% { transform: translateY(-80px) scale(1.1); opacity: 0; }
+}
+
+/* Products */
+.live-products {
+  position: absolute;
+  top: 10%;
+  right: 100px; /* adjust based on ad placement */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 6;
+}
+.live-products .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  padding: 5px;
+  border-radius: 8px;
+  color: #fff;
+  width: 100px;
+}
+.live-products .product img {
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Filter selector */
+.live-player-container select {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 15;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+}
+/* Reaction Price Tags */
+.reaction .price-tag {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-top: 2px;
+  text-align: center;
+}
+
+/* Small donation drop-down */
+.live-donation {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.live-donation select {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.live-donation button {
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #ff4d4d;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.live-donation button:hover {
+  background-color: #ff1a1a;
+}

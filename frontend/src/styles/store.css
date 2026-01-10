@@ -1,0 +1,63 @@
+/* frontend/src/pages/Store.css */
+
+/* ============================= */
+/* STORE PAGE */
+/* ============================= */
+
+.store-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.store-page h1 {
+  margin-bottom: 16px;
+}
+
+/* ============================= */
+/* BALANCE / TRADING SECTION */
+/* ============================= */
+
+.balance-section {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.balance-section p {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.balance-section button {
+  margin-right: 10px;
+  margin-top: 8px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #1976d2;
+  color: #fff;
+}
+
+.balance-section button:hover {
+  background-color: #125aa0;
+}
+
+.trade-result {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* ============================= */
+/* STORE GRID */
+/* ============================= */
+
+.store-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}

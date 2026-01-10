@@ -1,0 +1,26 @@
+.trade-section {
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.profit {
+  background-color: #d4edda; /* green flash for profit */
+  animation: flash-animation 0.5s;
+}
+
+.loss {
+  background-color: #f8d7da; /* red flash for loss */
+  animation: flash-animation 0.5s;
+}
+
+@keyframes flash-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.balances p {
+  margin: 5px 0;
+  font-weight: bold;
+}

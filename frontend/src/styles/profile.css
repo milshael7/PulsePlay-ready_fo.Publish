@@ -1,0 +1,30 @@
+/* Profile page styles */
+.profile-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+.profile-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-info label {
+  font-weight: bold;
+}
+
+.profile-info input {
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

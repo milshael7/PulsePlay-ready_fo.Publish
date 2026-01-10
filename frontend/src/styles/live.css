@@ -1,0 +1,201 @@
+/* frontend/src/style/Live.css - First Half */
+
+/* General layout */
+.live-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.live-page main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* LivePlayer container */
+.live-player-container {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+/* Rotating ads/GIFs on sides */
+.live-player-container .side-ad {
+  position: absolute;
+  top: 10%;
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  animation: rotateAds 30s infinite;
+}
+
+.live-player-container .side-ad.left {
+  left: 10px;
+}
+
+.live-player-container .side-ad.right {
+  right: 10px;
+}
+
+@keyframes rotateAds {
+  0% { opacity: 0; transform: scale(0.9); }
+  10% { opacity: 1; transform: scale(1); }
+  90% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.9); }
+}
+
+/* Live info / instructions */
+.live-info {
+  width: 80%;
+  max-width: 1200px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #ccc;
+}/* frontend/src/style/Live.css - Second Half */
+
+/* Free reactions overlay */
+.live-player-container .reaction {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  opacity: 0.9;
+  animation: floatUp 2s ease-out forwards;
+  pointer-events: none;
+  z-index: 20;
+}
+
+@keyframes floatUp {
+  0% { transform: translate(-50%, 0); opacity: 0.9; }
+  100% { transform: translate(-50%, -150px); opacity: 0; }
+}
+
+/* Paid GIFs overlay with price */
+.live-player-container .paid-gif {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  border-radius: 12px;
+  border: 2px solid gold;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+  padding-bottom: 5px;
+  z-index: 25;
+  pointer-events: none;
+  animation: popIn 0.5s ease-out;
+}
+
+@keyframes popIn {
+  0% { transform: translateX(-50%) scale(0.5); opacity: 0; }
+  50% { transform: translateX(-50%) scale(1.1); opacity: 1; }
+  100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+/* Product placement overlay */
+.live-player-container .product-overlay {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 180px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 15;
+}
+
+.live-player-container .product-overlay img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.live-player-container .product-overlay p {
+  font-size: 0.85rem;
+  color: #fff;
+  margin: 0;
+}
+
+/* Streamer filters & effects (example overlays) */
+.live-player-container .filter-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 12px;
+  mix-blend-mode: screen; /* simple filter effect */
+}
+
+/* Like / share buttons */
+.live-controls {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.live-controls button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff4d6d, #ffb84d);
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.live-controls button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+/* Product card inside live-player overlay */
+.product-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 6px;
+}
+
+.product-card p {
+  margin: 0;
+  color: #fff;
+  font-size: 0.85rem;
+  text-align: center;
+}

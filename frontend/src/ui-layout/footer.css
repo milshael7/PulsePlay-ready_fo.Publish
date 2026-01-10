@@ -1,0 +1,46 @@
+/* Footer Styles */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+}
+
+/* Footer text */
+footer p {
+  margin: 0;
+}
+
+/* Social Icons Container */
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Individual Icon Wrappers */
+footer .social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+footer .social-icons a:hover {
+  transform: translateY(-3px);
+}
+
+/* SVG inside the icon */
+footer .social-icons svg {
+  width: 20px;
+  height: 20px;
+}

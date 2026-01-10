@@ -1,0 +1,110 @@
+/* frontend/src/components/StoreItem.css */
+
+/* ============================= */
+/* STORE GRID ITEM (PREVIEW) */
+/* ============================= */
+
+.store-item-card {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.store-item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.store-item-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.store-item-card h3 {
+  margin: 8px 0 4px;
+  font-size: 1rem;
+}
+
+.store-item-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* ============================= */
+/* PRODUCT SHOW CONTENT */
+/* ============================= */
+
+.product-show-content {
+  width: 100%;
+}
+
+.product-main-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.product-show-content h2 {
+  margin: 8px 0;
+  font-size: 1.4rem;
+}
+
+.product-show-content .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* ============================= */
+/* MUSIC CONTROL */
+/* ============================= */
+
+.music-toggle {
+  margin: 12px 0;
+}
+
+.music-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* MESSAGE SELLER */
+/* ============================= */
+
+.message-owner {
+  margin-top: 16px;
+}
+
+.message-owner textarea {
+  width: 100%;
+  min-height: 70px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.message-owner button {
+  margin-top: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #1976d2;
+  color: #fff;
+  cursor: pointer;
+}
+
+.message-owner button:hover {
+  background-color: #125aa0;
+}
