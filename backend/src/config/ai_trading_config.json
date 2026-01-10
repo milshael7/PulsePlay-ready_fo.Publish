@@ -1,0 +1,8 @@
+{
+    "aiWalletStart": 1000,
+    "aiWalletMax": 10000,
+    "aiTradePercentOptions": [3,5,10,15,20,25,30,35,40,45,50],
+    "aiDefaultPercent": 30,
+    "storehouseMinThreshold": 1000,
+    "autoFundAmount": 1000
+}

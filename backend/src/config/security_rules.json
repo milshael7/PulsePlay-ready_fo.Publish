@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "aiWallets": {
+      "read": "auth != null",
+      "write": "auth != null && auth.role == 'admin'"
+    },
+    "aiDummyWallets": {
+      "read": "auth != null",
+      "write": "auth != null && auth.role == 'admin'"
+    },
+    "storehouse": {
+      "read": "auth != null",
+      "write": "auth != null && auth.role == 'admin'"
+    },
+    "realTradeAllowed": {
+      "read": "auth != null && auth.role == 'admin'",
+      "write": "auth != null && auth.role == 'admin'"
+    },
+    "tradingLogs": {
+      "read": "auth != null",
+      "write": "auth != null && auth.role == 'admin'"
+    }
+  }
+}
