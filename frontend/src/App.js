@@ -1,14 +1,16 @@
 import React from "react";
-import VideoCards from "./components/VideoCards";
-import Footer from "./Footer";
+
+// Import components using correct relative paths and case-sensitive filenames
+import Navbar from './ui-layout/Navbar';
+import Footer from './layouts/Footer';
 
 function App() {
   return (
-    <>
-      <h1 style={{ textAlign: "center" }}>My Video Gallery</h1>
-      <VideoCards />
+    <div>
+      <Navbar />
+      {/* Your main app content goes here */}
       <Footer />
-    </>
+    </div>
   );
 }
 
