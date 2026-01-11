@@ -1,6 +1,6 @@
 import React from "react";
 
-// Import components using correct relative paths and case-sensitive filenames
+// Import components using exact relative paths and case-sensitive filenames
 import Navbar from './ui-layout/Navbar';
 import Footer from './layouts/Footer';
 
